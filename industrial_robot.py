@@ -2,7 +2,7 @@
 Industrial Robot base class.
 '''
 
-class industrial():
+class Industrial():
     """Industrial Robot base class.
     Initialize with the robot name, payload, application, and company.
     """
@@ -118,21 +118,8 @@ class industrial():
 
         print(f'robot moves from {station}')
 
-
-
-class ground(industrial):
-
-    def __init__(self, name: str, payload: float, application: list, linear_rail_length: float, company = 'NIST'):
-        super().__init__(name, payload, application, company=company)
-        self.linear_rail_length = linear_rail_length
-
-    def discard_part(self, parttype: str):
-
-        print(f'{self._name} discards {parttype}')
-
-
 if __name__ == '__main__':
-    robot = industrial('Shon', 1.2, ['s', 'd'])
+    robot = Industrial('Shon', 1.2, ['s', 'd'])
     print(robot)
     robot.pick_up('red battery', 'bin 1')
     robot.put_down('red battery', 'bin 1')

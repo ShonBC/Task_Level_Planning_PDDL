@@ -1,6 +1,6 @@
-from industrial_robot import industrial
+from industrial_robot import Industrial
 
-class gantry(industrial):
+class Gantry(Industrial):
     """Gantry robot class, derived class from Industrial Robot class.
 
     Args:
@@ -71,6 +71,6 @@ if __name__ == '__main__':
     # robot.move_to_gripper_station('gripper changing station')
     # robot.move_from_gripper_station('gripper changing station')
 
-    g_robot = gantry('Shon', 2.0, ['s', 'a'], 1.0, 2.0, 10, 11, 'NIST')
+    g_robot = Gantry('Shon', 2.0, ['s', 'a'], 1.0, 2.0, 10, 11, 'NIST')
     print(g_robot)
     g_robot.pick_up('red battery', 'bin 2')
