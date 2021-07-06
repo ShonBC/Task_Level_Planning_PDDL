@@ -37,7 +37,8 @@ def initialize():
         station = [input('Station to deliver parts [as1, as2]: ')]
         r_k, b_k, b_k, g_k = [int(x) for x in input('Number of red battery/blue battery/blue sensor/green regulator in the kit [0-5]: ')]
 
-
-# initialize()
-robot = industrial_robot.indusrial_robot('Shon', 1.2, ['s', 'a'])
-robot.pick_up('red battery', 'bin 1')
+if __name__ == '__main__':
+    
+    # initialize()
+    robot = industrial_robot.industrial('Shon', 1.2, ['s', 'a'])
+    robot.pick_up('red battery', 'bin 1')

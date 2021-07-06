@@ -12,6 +12,7 @@ class ground(industrial):
     def discard_part(self, parttype: str):
 
         print(f'{self._name} discards {parttype}')
-
-gnd = ground('Shon', 2.0, ['s', 'a'], 1.0, 'NIST')
-print(gnd)
+if __name__ == '__main__':
+    
+    gnd = ground('Shon', 2.0, ['s', 'a'], 1.0, 'NIST')
+    print(gnd)
