@@ -20,10 +20,10 @@
 		(robot-has-gripper ?robot - Robot ?gripper - Gripper)	
 		(robot-can-reach-bin ?robot - Robot ?bin - Bin)
 		(robot-is-not-at-bin ?robot - Robot)
- 	(robot-is-not-at-agv ?robot - Robot)
+ 	    (robot-is-not-at-agv ?robot - Robot)
 		(robot-is-not-at-gripper-station ?robot - Robot)
 
-(agv-is-at-as ?agv - AGV ?station - AssemblyStation)
+		(agv-is-at-as ?agv - AGV ?station - AssemblyStation)
 		(agv-is-at-ks ?agv - AGV)
 		(agv-is-not-at-ks ?agv - AGV)
 		(agv-can-go-to-as ?agv - AGV ?as - AssemblyStation)
@@ -93,7 +93,7 @@
 			(increase(current-parttype-qty-on-agv ?parttype  ?agv)1)
 			(not(gripper-holds-parttype ?gripper ?parttype))
 			(gripper-is-empty ?gripper)
-			(increase(kit-final-part-qty)1)
+			(increase(kit-current-part-qty)1)
 			)
 	)
 	(:action ATTACH_GRIPPER
@@ -185,7 +185,9 @@
 		)
 		:precondition(and
 			(robot-is-at-home ?robot)
-			(robot-is-not-at-gripper-station ?robot)	
+			(robot-is-not-at-gripper-station ?robot)
+			(robot-is-not-at-bin ?robot)
+ 	    (robot-is-not-at-agv ?robot)	
 		)
 		:effect(and
 			(robot-is-not-at-home ?robot)

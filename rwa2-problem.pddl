@@ -55,11 +55,6 @@
         (gripper-is-empty vacuum_gripper)
         (gripper-is-empty finger_gripper)
 
-        ;static functions
-        (=(current-parttype-qty-on-agv blue_sensor agv1)0)
-        (=(current-parttype-qty-on-agv green_regulator agv1)0)
-        (=(current-parttype-qty-on-agv red_battery agv1)0)
-        (=(current-parttype-qty-on-agv blue_battery agv1)0)
 
         ;dynamic predicates (from user inputs)
         ; (agv-is-at-as agv1 as1)
@@ -76,6 +71,11 @@
 
         ;dynamic functions (from user inputs)
         ; (=(kit-final-part-qty)6)
+
+        ; (=(current-parttype-qty-on-agv blue_sensor agv1)0)
+        ; (=(current-parttype-qty-on-agv green_regulator agv1)0)
+        ; (=(current-parttype-qty-on-agv red_battery agv1)0)
+        ; (=(current-parttype-qty-on-agv blue_battery agv1)0)
 
         ; (=(parttype-quantity-in-bin blue_sensor bin1)5)
         ; (=(parttype-quantity-in-bin green_regulator bin2)5)
@@ -99,4 +99,3 @@
     )
 
 )
-user input to append to file
