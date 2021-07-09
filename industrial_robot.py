@@ -14,18 +14,41 @@ class Industrial():
             name (str): Name of the robot. This attribute canonly be accessed outside the class definition and cannot be set.
             payload (float): Payload for the robot’s arm(s). This attribute can be both accessed and set outside the class definition.
             application (list): List of applications the robot can perform. For instance,gantry_robot can do both kitting and assembly while ground_robot can only do kitting. This attribute can be both accessed and set outside the class definition.
-            company (str, optional): Name of the robot’s vendor. By default this is set to "Nist". This attribute canonly be accessed outsidethe class definition and cannot be set.
+            company (str, optional): Name of the robot’s vendor. By default this is set to "Nist". This attribute canonly be accessed outsidethe class definition and cannot be set.  Defaults to 'NIST'.
         """
        
         self._name = name
-        self.payload = payload
-        self.application = application
+        self._payload = payload
+        self._application = application
         self._company = company
 
     def __str__(self):
         return f'Name: {self._name}, Payload: {self.payload}, Application: {self.application}, Company: {self._company}'
 
+    @property
+    def name(self):
+        return self._name
+    
+    @property
+    def payload(self):
+        return self._payload
 
+    @property
+    def application(self):
+        return self._application
+
+    @property 
+    def company(self):
+        return self._company
+
+    @name.setter
+    def payload(self, payload):
+        self._payload = payload
+    
+    @application.setter
+    def application(self, application):
+        self.application = application
+        
     def pick_up(self, parttype: str, bin: str):
         """Print the part type picked up and the bin it was obtained from.
 

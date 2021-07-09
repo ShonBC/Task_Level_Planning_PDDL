@@ -1,34 +1,67 @@
 from industrial_robot import Industrial
 
 class Gantry(Industrial):
-    """Gantry robot class, derived class from Industrial Robot class.
+    """Initialize class attributes. 
 
     Args:
         indusrial_robot (class): Base class used to initialize some of the gantry robot parameters and methods.
     """
     
     def __init__(self, name: str, payload: float, application: list, small_rail_length: float, long_rail_length: float, small_rail_velocity: float, long_rail_velocity: float, company= 'NIST'):            
-        """[summary]
+        """Initialize Gantry class parameters. 
 
         Args:
             name (str): Name of the robot. This attribute canonly be accessed outside the class definition and cannot be set.
             payload (float): Payload for the robot’s arm(s). This attribute can be both accessed and set outside the class definition.
             application (list): List of applications the robot can perform. For instance,gantry_robot can do both kitting and assembly while ground_robot can only do kitting. This attribute can be both accessed and set outside the class definition.
-            company (str, optional): Name of the robot’s vendor. By default this is set to "Nist". This attribute canonly be accessed outsidethe class definition and cannot be set.
+            company (str, optional): Name of the robot’s vendor. By default this is set to "Nist". This attribute canonly be accessed outsidethe class definition and cannot be set. Defaults to 'NIST'.
             small_rail_length (float): [description]
             long_rail_length (float): [description]
             small_rail_velocity (float): [description]
             long_rail_velocity (float): [description]
         """
+
         super().__init__(name, payload, application, company=company)
-        self.small_rail_length = small_rail_length
-        self.long_rail_length = long_rail_length
-        self.small_rail_velocity = small_rail_velocity
-        self.long_rail_velocity = long_rail_velocity
+        self._small_rail_length = small_rail_length
+        self._long_rail_length = long_rail_length
+        self._small_rail_velocity = small_rail_velocity
+        self._long_rail_velocity = long_rail_velocity
 
     def __str__(self):
         
         return f'Name: {self._name}, Payload: {self.payload}, Application: {self.application}, Small Rail Length: {self.small_rail_length}, Ling Rail Length: {self.long_rail_length}, Small Rail Velocity: {self.small_rail_velocity}, Long Rail Velocity: {self.long_rail_velocity}, Company: {self._company}'
+
+    @property
+    def small_rail_length(self):
+        return self._small_rail_length
+
+    @property
+    def long_rail_length(self):
+        return self._long_rail_length
+
+    @property
+    def small_rail_velocity(self):
+        return self._small_rail_velocity
+
+    @property
+    def long_rail_velocity(self):
+        return self._long_rail_velocity
+
+    @small_rail_length.setter
+    def small_rail_length(self, small_rail_length):
+        self._small_rail_length = small_rail_length
+
+    @long_rail_length.setter
+    def long_rail_length(self, long_rail_length):
+        self._long_rail_length = long_rail_length
+
+    @small_rail_velocity.setter
+    def small_rail_velocity(self, small_rail_velocity):
+        self._small_rail_velocity = small_rail_velocity
+
+    @long_rail_velocity.setter
+    def long_rail_velocity(self, long_rail_velocity):
+        self._long_rail_velocity = long_rail_velocity
 
     def activate_camera(self):
         """Print the gantry robot activates the camera.
