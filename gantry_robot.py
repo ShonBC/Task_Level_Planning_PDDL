@@ -15,10 +15,10 @@ class Gantry(Industrial):
             payload (float): Payload for the robot’s arm(s). This attribute can be both accessed and set outside the class definition.
             application (list): List of applications the robot can perform. For instance,gantry_robot can do both kitting and assembly while ground_robot can only do kitting. This attribute can be both accessed and set outside the class definition.
             company (str, optional): Name of the robot’s vendor. By default this is set to "Nist". This attribute canonly be accessed outsidethe class definition and cannot be set. Defaults to 'NIST'.
-            small_rail_length (float): [description]
-            long_rail_length (float): [description]
-            small_rail_velocity (float): [description]
-            long_rail_velocity (float): [description]
+            small_rail_length (float): Length of small rail.
+            long_rail_length (float): Length of long rail.
+            small_rail_velocity (float): Velocity of small rail.
+            long_rail_velocity (float): Velocity of long rail.
         """
 
         super().__init__(name, payload, application, company=company)
