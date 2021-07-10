@@ -17,7 +17,7 @@ class Ground(Industrial):
         self._linear_rail_length = linear_rail_length
 
     def __str__(self):
-        return f'Name: {self._name}, Payload: {self.payload}, Application: {self.application}, Linear Rail Length: {self.linear_rail_length}, Company: {self._company}'
+        return f'Name: {self._name}, Payload: {self._payload}, Application: {self._application}, Linear Rail Length: {self._linear_rail_length}, Company: {self._company}'
 
     @property
     def linear_rail_length(self):

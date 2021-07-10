@@ -29,7 +29,7 @@ class Gantry(Industrial):
 
     def __str__(self):
         
-        return f'Name: {self._name}, Payload: {self.payload}, Application: {self.application}, Small Rail Length: {self.small_rail_length}, Ling Rail Length: {self.long_rail_length}, Small Rail Velocity: {self.small_rail_velocity}, Long Rail Velocity: {self.long_rail_velocity}, Company: {self._company}'
+        return f'Name: {self._name}, Payload: {self._payload}, Application: {self._application}, Small Rail Length: {self._small_rail_length}, Ling Rail Length: {self._long_rail_length}, Small Rail Velocity: {self._small_rail_velocity}, Long Rail Velocity: {self._long_rail_velocity}, Company: {self._company}'
 
     @property
     def small_rail_length(self):

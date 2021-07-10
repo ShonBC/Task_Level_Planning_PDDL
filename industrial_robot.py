@@ -23,7 +23,7 @@ class Industrial():
         self._company = company
 
     def __str__(self):
-        return f'Name: {self._name}, Payload: {self.payload}, Application: {self.application}, Company: {self._company}'
+        return f'Name: {self._name}, Payload: {self._payload}, Application: {self._application}, Company: {self._company}'
 
     @property
     def name(self):
